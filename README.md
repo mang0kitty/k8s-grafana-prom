@@ -4,7 +4,7 @@
 λ kubectl apply -f .\nginx-service.yaml
 
 λ kubectl run -it busybox --image=busybox sh
-# wget http://nginx-service/index.html
+  ..wget http://nginx-service/index.html
 
 λ helm init
 
