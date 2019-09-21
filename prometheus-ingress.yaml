@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: prometheus-ingress
+spec:
+  rules:
+    - host: prometheus.localtest.me
+      http:
+        paths:
+          - backend:
+              serviceName: prometheus-server
+              servicePort: http
+            path: /
+    - host: nginx.localtest.me
+      http:
+        paths:
+          - backend:
+              serviceName: nginx-service
+              servicePort: http
+            path: /
+    - host: grafana.localtest.me
+      http:
+        paths:
+          - backend:
+              serviceName: grafana
+              servicePort: service
+            path: /
